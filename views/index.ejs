@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>MeetMe - Resume Website Template</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+  <!-- Icon -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Slicknav -->
+  <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+  <!-- Menu CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+  <!-- Slider CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
+  <!-- Nivo Lightbox -->
+  <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<!-- Login/Home Page: (email and password) - press submit - form fades away-->
+<!-- or -->
+<!-- sign up: when user clicks sign up button, form pops up prompting inputs - 2 password fields -->
+<!-- Entry page - title - author - genre - # of pgs - start/end date - opinion of book: entry form fades in - user inputs book info - press submit - entry is created  -->
+<!-- Entry edit - click icon - edit form pops up with current entry info inside - user makes edits and submits - new entry not created, current box is just updated -->
+<!-- trash can - user clicks - entry is removed from page and db - other entries fill the space -->
+
+
+
+
+<body>
+
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="icon-menu"></span>
+            <span class="icon-menu"></span>
+            <span class="icon-menu"></span>
+          </button>
+          <a href="index.ejs" class="navbar-brand">
+            <h1>ReadFreak</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+            <li class="nav-item active">
+              <a class="nav-link" href="#hero-area">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">
+                Bookshelf
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="onepage-nev mobile-menu">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <!-- <li>
+            <a href="#services">Services</a>
+          </li> -->
+        <li>
+          <a href="#resume">Resume</a>
+        </li>
+        <!-- <li>
+            <a href="#portfolio">Work</a>
+          </li> -->
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <!-- Mobile Menu End -->
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Area Start -->
+    <div id="hero-area" class="hero-area-bg">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 text-center">
+            <div class="contents">
+              <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">This is</h5>
+              <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">ReadFreak</h2>
+              <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Enter book details</p>
+              <form action="/bookshelf" method="post" class="form social-icon wow fadeInUp" data-wow-delay="0.8s">
+                <div class="formDiv">
+                  <div>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title"><br><br>
+                    <label for="author">Author:</label>
+                    <input type="text" name="author"><br><br>
+                  </div>
+
+                  <div>
+                    <label for="genre">Genre:</label>
+                    <input type="text" name="genre"><br><br>
+
+                    <label for="numOfPages"># of pages:</label>
+                    <input type="number" name="numOfPages"><br><br>
+                  </div>
+
+                  <div>
+                    <label for="startDate">Started:</label>
+                    <input type="date" name="startDate"><br><br>
+
+                    <label for="endDate">Finished:</label>
+                    <input type="date" name="endDate"><br><br>
+                  </div>
+                  <div>
+                    <label for="thoughts" class="thoughts">Thoughts:</label>
+                    <textarea class="thoughtBlock" name="thoughts"></textarea>
+
+                    <input type="submit" class="header-button btn btn-common wow fadeInUp" data-wow-delay="1s"
+                      value="Shelve">
+                  </div>
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Hero Area End -->
+
+  </header>
+  <!-- Header Area wrapper End -->
+
+  <!-- About Section Start -->
+  <!-- About Section End -->
+
+  <!-- Services Section Start -->
+  <!-- Services Section End -->
+
+  <!-- Resume Section Start -->
+  <div id="resume" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="education wow fadeInRight" data-wow-delay="0.3s">
+            <ul class="bookList">
+              <h2 class="timelin-title">Books</h2>
+              <% for(let i=0; i<books.length; i++) {%>
+                <li class="books">
+                  <div class="content-text <%= books[i].favorited ? 'pink' : '' %>"">
+                    <h3 class=" line-title title">
+                    <%= books[i].title %>
+                      </h3>
+                      <span class="edit">
+                        <%= books[i].edit %>
+                      </span>
+                      <span class="remove">
+                        <%= books[i].remove %>
+                      </span>
+                      <span><i class="fa-solid fa-user-pen" aria-hidden="true"></i></span>
+                      <span><i class="fa-solid fa-trash" aria-hidden="true"></i></span>
+                      <span class="author">
+                        <%= books[i].author %>
+                      </span>
+                      <span class="genre">
+                        <%= books[i].genre %>
+                      </span>
+                      <span class="numOfPages">
+                        <%= books[i].numOfPages %>
+                      </span>
+                      <span class="startDate">
+                        <%= books[i].startDate %>
+                      </span>
+                      <span class="endDate">
+                        <%= books[i].endDate %>
+                      </span>
+                      <p class="line-text thoughts">
+                        <%= books[i].thoughts %>
+                      </p>
+                      <!-- <% console.log(books[i].endDate) %> -->
+                  </div>
+                </li>
+                <% } %>
+          </div>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Resume Section End -->
+  <!-- Footer Section Start -->
+  <footer class="footer-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+            <ul class="social-icon">
+              <li>
+                <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
+              </li>
+              <li>
+                <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+              </li>
+              <li>
+                <a class="instagram" href="#"><i class="icon-social-linkedin"></i></a>
+              </li>
+              <li>
+                <a class="instagram" href="#"><i class="icon-social-google"></i></a>
+              </li>
+            </ul>
+            <p>Copyright © 2018 UIdeck All Right Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="icon-arrow-up"></i>
+  </a>
+  <script src="main.js"></script>
+</body>
+
+</html>
